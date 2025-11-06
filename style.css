@@ -168,8 +168,8 @@ section {
     text-align: center;
 }
 
-/* --- Project Section --- */
-/* Add this to your style.css file */
+/* --- Project Section (ApnaManager) --- */
+/* Replace the existing project styles with this block */
 
 .live-demo-btn {
   display: inline-block;
@@ -180,45 +180,64 @@ section {
   border-radius: 8px;
   margin-top: 20px;
   font-weight: 600;
-  transition: transform 0.3s, background-color 0.3s;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .live-demo-btn:hover {
   transform: translateY(-3px);
-  background: #004494;
+  background: #004494; /* fallback hover color */
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
 }
 
+/* Project container */
 .project {
   background: var(--secondary-color);
+  padding: 70px 0;
+  /* optional subtle border or top divider */
+  /* border-top: 1px solid rgba(0,0,0,0.03); */
 }
 
+/* layout */
 .project-details {
   display: flex;
   gap: 40px;
   align-items: flex-start;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+/* info column */
 .project-info {
-  flex: 1;
+  flex: 1 1 420px; /* grows, shrinks, base */
   margin-bottom: 20px;
+  min-width: 280px;
 }
 
 .project-info h3 {
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+  color: var(--heading-color, #111);
+}
+
+/* feature list */
+.project-features h4 {
+  margin-top: 18px;
+  margin-bottom: 12px;
 }
 
 .project-features ul {
   list-style: none;
-  margin-top: 20px;
+  margin-top: 0;
   padding-left: 0;
 }
 
 .project-features li {
   padding-left: 30px;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  color: var(--text-color, #444);
 }
 
 .project-features li::before {
@@ -226,45 +245,79 @@ section {
   color: var(--primary-color);
   position: absolute;
   left: 0;
-  font-weight: bold;
+  top: 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
+/* gallery column
+   Use a responsive grid so 5 images display nicely across screen sizes */
+/* Better horizontal layout for project images */
 .project-gallery {
-  flex: 1.5;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  flex: 1.5 1 520px;
+  display: flex;
+  flex-wrap: nowrap;
   gap: 20px;
-  margin-top: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
 }
 
-.gallery-img {
-  width: 100%;
+.project-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.project-gallery::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+}
+
+/* --- MODIFIED RULE --- */
+.gallery-img {
+  /* REMOVED: flex: 0 0 260px; (This was the fixed width) */
+  height: 350px; /* Keep the fixed uniform height */
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  scroll-snap-align: start;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Add flex-shrink to prevent weird squashing */
+  flex-shrink: 0; 
+}
+
+/* --- MODIFIED RULE --- */
+.gallery-img img {
+  /* REMOVED: width: 100%; */
+  /* REMOVED: object-fit: cover; */
+  
+  height: 100%; /* Make the image fill the container's height */
+  width: auto;   /* Let the width adjust automatically */
+  display: block;
+  transition: transform 0.35s ease;
 }
 
 .gallery-img:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-.gallery-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.gallery-img:hover img {
+  transform: scale(1.05);
 }
 
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
-  .project-details {
-    flex-direction: column;
+/* --- MODIFIED RESPONSIVE RULE --- */
+@media (max-width: 900px) {
+  .project-gallery {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
   }
 
-  .project-gallery {
-    grid-template-columns: 1fr;
+  .gallery-img {
+    /* REMOVED: flex: 0 0 220px; (This was the fixed width) */
+    height: 280px; /* Keep the smaller fixed height */
   }
 }
 
@@ -456,3 +509,28 @@ section {
     .project-gallery { grid-template-columns: 1fr; }
     .skills-certs-grid { grid-template-columns: 1fr; }
 }
+
+/* New styles for the new HTML structure */
+
+.project-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem; /* Or your preferred size */
+    color: var(--primary-color); /* This will make 'ApnaManager' orange like in your screenshot */
+    margin-bottom: 0;
+}
+
+.project-brand img {
+    height: 30px; /* Adjust as needed */
+}
+
+.project-main-title {
+    /* Use the same styling your h3 had */
+    font-size: 1.8rem;
+    margin-top: 5px; /* Add a little space */
+    margin-bottom: 14px;
+    color: var(--heading-color, #111);
+}
+
+/* You can now delete the .project-info h3 rule, as it's replaced by the new rules */
