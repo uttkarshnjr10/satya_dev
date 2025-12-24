@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satya Dev | Founder & Developer</title>
-    <!-- Link to your external CSS file -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -24,14 +30,13 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <!-- The h1 tag is now ready for the typing effect -->
                 <h1><span id="typing-effect"></span></h1>
                 <p class="subtitle">
                     An entrepreneur and innovator with a passion for technology and business management. Designer and co-developer of Apna Manager and Manager at Bright Tool Electrical.
                 </p>
             </div>
             <div class="hero-image-container">
-                <img src="satya_dev.png" alt="A photo of Satya Dev">
+                <img src="satya_dev.jpeg" alt="A photo of Satya Dev">
             </div>
         </div>
     </section>
@@ -39,130 +44,217 @@
     <section id="about" class="about animate-on-scroll">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <p>
-                I am a versatile professional who thrives at the intersection of technology and business. As the designer, idea maker, and co-developer behind <strong>Apna Manager</strong>, I collaborated with my cousin to bring a complex security solution to life, leveraging my technical knowledge to guide the project from concept to a full-stack application.
-            </p>
-            <p style="margin-top: 20px;">
-                Concurrently, I <strong>manage Bright Tool Electrical</strong>, an authorized electrical workshop, where I oversee daily operations, client relations, and strategic growth. This dual experience has equipped me with a unique blend of technical acumen and business management skills, driving me to solve real-world problems through both innovative code and effective management.
-            </p>
+            <div class="about-card">
+                <div class="about-content">
+                    <p class="highlight-text">
+                        I thrive at the intersection of <span class="text-primary">technology</span> and <span class="text-primary">business</span>.
+                    </p>
+                    <p>
+                        As the designer, idea maker, and co-developer behind <strong>Apna Manager</strong>, I collaborated to bring a complex security solution to life, leveraging technical knowledge to guide the project from concept to a full-stack application.
+                    </p>
+                    <hr class="divider">
+                    <p>
+                        Concurrently, I <strong>manage Bright Tool Electrical</strong>, an authorized electrical workshop, overseeing daily operations, client relations, and strategic growth. This dual experience equips me with a unique blend of technical acumen and business management skills, driving me to solve real-world problems.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-  <section id="project" class="project animate-on-scroll">
-  <div class="container">
-    <h2 class="section-title">Featured Project</h2>
+    <section id="project" class="project animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Featured Project</h2>
 
-                <div class="project-details">
-                <!-- Project Info -->
-                <div class="project-title-group">
-                <h3 class="project-brand">
-                    <img src="/images/logo.png" alt="ApnaManager Logo">
+            <div class="project-layout">
+                <div class="project-info-side">
+                    <div class="project-title-group">
+                        <h3 class="project-brand">
+                            <img src="/images/logo.png" alt="ApnaManager Logo">
+                        </h3>
+                        <h2 class="project-main-title">
+                            Centralized Data Management System
+                        </h2>
+                    </div>
+                    <p>
+                        ApnaManager is a full-stack web platform designed to streamline hotel guest registration 
+                        and empower law enforcement with secure, region-based access to verified data.
+                    </p>
+
+                    <a href="https://apnamanager.vercel.app/" 
+                       class="live-demo-btn" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                       🔗 View Live Project
+                    </a>
+
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Role-Based Access:</strong> Separate dashboards for Hotels, Police, Regional Admins, and Super Admin.</li>
+                            <li><strong>Guest Registration:</strong> Hotels can add guests with ID verification.</li>
+                            <li><strong>Police Search Tools:</strong> Officers can search guests by name, ID, or contact number.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-slider-side">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="/images/image1.png" alt="ApnaManager - Home Page">
+                            <div class="caption">Home Page</div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/image2.png" alt="ApnaManager - Admin Dashboard">
+                            <div class="caption">Login</div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/image3.png" alt="ApnaManager - Hotel Form">
+                            <div class="caption">About Us</div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/image4.png" alt="ApnaManager - Police Dashboard">
+                            <div class="caption">Police Interface</div>
+                        </div>
+                        <div class="slide">
+                            <img src="/images/image5.png" alt="ApnaManager - Reports">
+                            <div class="caption">Admin Dashboard</div>
+                        </div>
+
+                        <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
                     
-                </h3>
-                <h2 class="project-main-title">
-                    Centralized Data Management System
-                </h2>
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
+                </div>
             </div>
-        <p>
-          ApnaManager is a full-stack web platform designed to streamline hotel guest registration 
-          and empower law enforcement with secure, region-based access to verified data. 
-          The system provides a unified solution to improve public safety, ensure compliance, 
-          and enhance coordination between hotels and authorities.
-        </p>
-
-        <a href="https://apnamanager.vercel.app/" 
-           class="live-demo-btn" 
-           target="_blank" 
-           rel="noopener noreferrer">
-           🔗 View Live Project
-        </a>
-
-        <div class="project-features">
-          <h4>Key Features:</h4>
-          <ul>
-            <li><strong>Role-Based Access:</strong> Separate dashboards for Hotels, Police, Regional Admins, and Super Admin.</li>
-            <li><strong>Guest Registration:</strong> Hotels can add guests with ID verification and real-time photo capture.</li>
-            <li><strong>Police Search Tools:</strong> Officers can search guests by name, ID, or contact number within their jurisdiction.</li>
-            <li><strong>Admin Management:</strong> Regional and Super Admins can manage user access, monitor activity, and ensure system integrity.</li>
-          </ul>
         </div>
-      </div>
-
-      <!-- Project Gallery -->
-      <div class="project-gallery animate-on-scroll from-right">
-        <div class="gallery-img">
-          <img src="/images/image1.png" alt="ApnaManager - Home Page Screenshot" loading="lazy" />
-        </div>
-        <div class="gallery-img">
-          <img src="/images/image2.png" alt="ApnaManager - Admin Dashboard Screenshot" loading="lazy" />
-        </div>
-        <div class="gallery-img">
-          <img src="/images/image3.png" alt="ApnaManager - Hotel Management Form" loading="lazy" />
-        </div>
-        <div class="gallery-img">
-          <img src="/images/image4.png" alt="ApnaManager - Police Dashboard Interface" loading="lazy" />
-        </div>
-        <div class="gallery-img">
-          <img src="/images/image5.png" alt="ApnaManager - Reports and Insights Page" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <section id="experience" class="experience animate-on-scroll">
         <h2 class="section-title">Professional Experience</h2>
         <div class="timeline">
             <div class="timeline-item left animate-on-scroll from-left">
                 <div class="timeline-content">
-                    <h4>Office Management</h4>
-                    <p class="company">Bright tools Electrical (Electrical Workshop)</p>
+                    <h4>Administrative & Accounts Manager</h4>
+                    <p class="company">Bright Tools Electrical</p>
                     <p class="date">August 2018 - Present</p>
+                    <ul class="experience-list">
+                        <li>Managed daily financial transactions including invoicing, vendor payments, and client receipts.</li>
+                        <li>Prepared and maintained documentation for GST compliance, ensuring timely filing of returns.</li>
+                        <li>Used Microsoft Excel and Google Sheets to track inventory and manage client data.</li>
+                    </ul>
                 </div>
             </div>
+
             <div class="timeline-item right animate-on-scroll from-right">
                 <div class="timeline-content">
-                    <h4>HR Recruiter (Internship)</h4>
+                    <h4>HR / Talent Acquisition Intern</h4>
                     <p class="company">KMAC Talent Management Pvt. Ltd</p>
                     <p class="date">August 2022 (1 Month)</p>
-                    <p>Department: Talent Acquisition</p>
+                    <ul class="experience-list">
+                        <li>Assisted in the complete recruitment lifecycle from candidate sourcing to onboarding.</li>
+                        <li>Screened resumes and shortlisted candidates based on job requirements.</li>
+                    </ul>
                 </div>
             </div>
+
             <div class="timeline-item left animate-on-scroll from-left">
                 <div class="timeline-content">
-                    <h4>Computer Operator</h4>
+                    <h4>Administrative & Data Associate</h4>
                     <p class="company">Property Guards (Security Services Ltd)</p>
                     <p class="date">December 2017 - June 2018</p>
+                    <ul class="experience-list">
+                        <li>Managed and maintained large volumes of digital and physical data related to security logs.</li>
+                        <li>Created reports, staff schedules, and documentation using Microsoft Office.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="skills" class="skills-certs animate-on-scroll">
-        <div class="container skills-certs-grid">
-            <div class="animate-on-scroll from-left">
-                <h3 style="text-align:center; margin-bottom: 20px;">Technical Skills</h3>
-                <ul class="skills-list">
-                    <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
-                    <li>Google Workspace (Docs, Sheets, Slides)</li>
-                    <li>GST Filing</li>
-                    <li>Account Handling</li>
-                    <li>Screening Resume</li>
-                    <li>Job Posting</li>
-                    <li>End to End Recruitment</li>
-                </ul>
-            </div>
-            <div class="animate-on-scroll from-right">
-                <h3 style="text-align:center; margin-bottom: 20px;">Certifications</h3>
-                <ul class="certs-list">
-                    <li>ADCA <span class="cert-issuer">All India Computer Education Mission - 2024</span></li>
-                    <li>Short Term Certification in HR <span class="cert-issuer">KMAC Talent Management - 2022</span></li>
-                    <li>Basic of GST for Business <span class="cert-issuer">Instamoja - 2020</span></li>
-                    <li>Computer English Typing <span class="cert-issuer">DITT Patna - 2017</span></li>
-                    <li>CCC (Course on Computer Concept) <span class="cert-issuer">NIELIT - 2015</span></li>
-                    <li>DCA <span class="cert-issuer">STS (Bhartiye Computer Saksharta Mission) - 2009</span></li>
-                </ul>
+        <div class="container">
+            <h2 class="section-title">Skills & Credentials</h2>
+            
+            <div class="skills-wrapper">
+                
+                <div class="skills-column">
+                    <h3 class="col-header"><i class="fas fa-layer-group"></i> Expertise</h3>
+                    
+                    <div class="skill-group">
+                     <h4><i class="fas fa-briefcase"></i> Office & Professional Skills</h4>
+                        <div class="skill-tags">
+                            <span>Microsoft Office (Word, Excel, PowerPoint)</span>
+                            <span>Google Workspace (Docs, Sheets, Drive)</span>
+                            <span>Data Entry & Record Management</span>
+                            <span>Documentation & Reporting</span>
+                            <span>Administrative Support</span>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-group">
+                        <h4><i class="fas fa-briefcase"></i> Business & Operations</h4>
+                        <div class="skill-tags">
+                            <span>GST Filing & Compliance</span>
+                            <span>Financial Accounting</span>
+                            <span>Talent Acquisition</span>
+                            <span>Team Leadership</span>
+                            <span>Resume Screening</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certs-column">
+                    <h3 class="col-header"><i class="fas fa-certificate"></i> Certifications</h3>
+                    
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-award"></i></div>
+                        <div class="cert-details">
+                            <h4>ADCA (Adv. Diploma in Computer App)</h4>
+                            <span class="issuer">All India Computer Education Mission | 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="cert-details">
+                            <h4>Short Term Certification in HR</h4>
+                            <span class="issuer">KMAC Talent Management | 2022</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <div class="cert-details">
+                            <h4>Basics of GST for Business</h4>
+                            <span class="issuer">Instamojo | 2020</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-keyboard"></i></div>
+                        <div class="cert-details">
+                            <h4>Computer English Typing</h4>
+                            <span class="issuer">DITT Patna | 2017</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-desktop"></i></div>
+                        <div class="cert-details">
+                            <h4>CCC (Course on Computer Concepts)</h4>
+                            <span class="issuer">NIELIT | 2015</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
@@ -170,11 +262,10 @@
     <section id="contact" class="contact animate-on-scroll">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p>I'm currently open to new opportunities and collaborations. Feel free to reach out!</p>
+            <p>I'm currently open to new opportunities and collaborations.</p>
             <div class="contact-links">
                 <a href="mailto:satyadev.mail29@gmail.com">Email Me</a>
                 <a href="https://www.linkedin.com/in/satya-dev-a24380364" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://www.instagram.com/hey.satyadev" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
             <div class="address">
                 <p>Dariyapur, Patna, Bihar, India - 803301</p>
@@ -186,7 +277,6 @@
         <p>&copy; 2025 Satya Dev. All Rights Reserved.</p>
     </footer>
 
-    <!-- Link to your external JavaScript file -->
     <script src="script.js"></script>
 
 </body>
