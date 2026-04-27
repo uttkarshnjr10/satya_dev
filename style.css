@@ -51,31 +51,53 @@ section { padding: var(--section-spacing) 0; }
 /* --- NEW About Section --- */
 .about { background-color: var(--bg-white); }
 .about-card {
-    background: white;
-    padding: 50px;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    border-left: 6px solid var(--primary-color);
+    background: #ffffff;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02);
+    border: 1px solid rgba(226, 232, 240, 0.8);
     max-width: 900px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     position: relative;
     overflow: hidden;
 }
-/* Decorative background accent */
+
+/* Subtle decorative accent */
 .about-card::before {
     content: '';
     position: absolute;
-    top: 0; right: 0;
-    width: 150px; height: 150px;
+    top: -50px; right: -50px;
+    width: 250px; height: 250px;
     background: radial-gradient(circle, var(--accent-bg) 0%, transparent 70%);
-    opacity: 0.6;
+    opacity: 0.5;
+    z-index: 0;
 }
 
-.about-content p { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-dark); }
-.highlight-text { font-size: 1.4rem; font-weight: 600; color: var(--secondary-color); margin-bottom: 30px !important; }
+.about-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-content p { 
+    font-size: 1.15rem; 
+    line-height: 1.8;
+    margin-bottom: 24px; 
+    color: var(--text-dark); 
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-text { 
+    font-size: 1.5rem !important; 
+    font-weight: 600; 
+    color: var(--secondary-color); 
+    margin-bottom: 35px !important; 
+    line-height: 1.5;
+}
 .text-primary { color: var(--primary-color); }
-.divider { border: 0; height: 1px; background: #e2e8f0; margin: 30px auto; width: 60%; }
 
 /* --- NEW Project Section (Slider Layout) --- */
 .project { background-color: var(--bg-light); }
